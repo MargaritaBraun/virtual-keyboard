@@ -1,8 +1,8 @@
 let pull = 10;
-const margoName = "Margarita"
-const runMargo = (margoName, pull) => {
+const margoName = "Margarita";
+const runMargo = () => {
   return console.log(`${margoName} ${pull} km`);
 };
-//runMargo(margoName, pull);
+// runMargo(margoName, pull);
 
-export {pull, margoName, runMargo}
+export { pull, margoName, runMargo };
