@@ -1,5 +1,7 @@
 .body {
   background-color: orange;
+  margin: auto;
+  font-size: 10px;
 }
 
 .base {
@@ -9,13 +11,34 @@
   align-items: center;
 }
 
-.look {
-  width: 100px;
-  height: 150px;
-  background-color: chartreuse;
-}
-
 .text_input_field {
   width: 70vw;
   height: 30vh;
+}
+
+.key__container {
+  width: 90vw;
+  height: 50vh;
+  background-color: chartreuse;
+  margin: 4rem auto 0 auto;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.key {
+  width: 4rem;
+  height: 4rem;
+  padding: 0.5rem;
+  font-size: 2rem;
+  color: midnightblue;
+  background-color: rgb(9, 134, 82);
+  border-radius: 1rem;
+  margin: 3px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: top;
 }/*# sourceMappingURL=style.css.map */
