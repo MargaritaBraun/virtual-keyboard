@@ -8,7 +8,7 @@ export class KeyButton {
     let template = "";
     let keyboard = document.createElement("button");
     keyboard.className = "key";
-    console.log(keyboard)
+    console.log(keyboard);
     if (this.size) {
       let pullsize = `${this.size}`;
       keyboard.style.width = pullsize;
@@ -16,7 +16,7 @@ export class KeyButton {
     keyboard.setAttribute("value", this.value);
     if (this.value) {
       template += `<span">${this.value}`;
-        template += "</span>";
+      template += "</span>";
     }
 
     keyboard.innerHTML = template;

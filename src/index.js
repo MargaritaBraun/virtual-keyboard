@@ -19,5 +19,3 @@ const generateKeys = (data) => {
   return keys;
 };
 renderKeyboardToDom(data);
-
-
