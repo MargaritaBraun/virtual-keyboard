@@ -16,13 +16,21 @@
   height: 30vh;
 }
 
-.key__container {
+.keyboard_base {
   width: 90vw;
   height: 50vh;
   background-color: chartreuse;
   margin: 4rem auto 0 auto;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
+}
+
+.keyboard_base__hidden {
+  bottom: -100%;
+}
+
+.key__container {
+  text-align: center;
 }
 
 .key {

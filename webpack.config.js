@@ -11,8 +11,9 @@ const stylesHandler = isProduction
   : "style-loader";
 
 const config = {
-  entry: "./src/index.ts",
+  entry: "./src/index.js",
   devtool: "source-map",
+  watch: true,
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js"
