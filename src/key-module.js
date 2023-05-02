@@ -1,14 +1,14 @@
 export class KeyButton {
-  constructor({ value, size }) {
+  constructor({ value, size, space }) {
     this.value = value;
     this.size = size;
+    this.space = space;
   }
 
   generateKey() {
     let template = "";
     let keyboard = document.createElement("button");
     keyboard.className = "key";
-    console.log(keyboard);
     if (this.size) {
       let pullsize = `${this.size}`;
       keyboard.style.width = pullsize;
@@ -18,7 +18,7 @@ export class KeyButton {
       template += `<span">${this.value}`;
       template += "</span>";
     }
-
+    if (this.space) keyboard.setAttribute("space", this.space);
     keyboard.innerHTML = template;
     return keyboard;
   }
