@@ -1,8 +1,7 @@
 const small = "3rem";
-const big = "8rem";
-const small_1 = "4rem";
-const small_2 = "5.5rem";
-const big_0 = "6.5rem";
+const big = "6rem";
+const smallA = "4rem";
+const smallB = "5.5rem";
 const space = "10rem";
 export const data = [
   {
@@ -59,11 +58,12 @@ export const data = [
   },
   {
     value: "backspace",
-    size: big
+    size: big,
+    space: true
   },
   {
     value: "tab",
-    size: "small_2"
+    size: "s"
   },
   {
     value: "Q",
@@ -115,11 +115,12 @@ export const data = [
   },
   {
     value: "\\",
-    size: small
+    size: small,
+    space: true
   },
   {
     value: "caps lock",
-    size: small_2
+    size: smallB
   },
   {
     value: "A",
@@ -167,11 +168,12 @@ export const data = [
   },
   {
     value: "enter",
-    size: small_2
+    size: smallB,
+    space: true
   },
   {
     value: "shift",
-    size: big_0
+    size: big
   },
   {
     value: "Z",
@@ -215,7 +217,8 @@ export const data = [
   },
   {
     value: "shift",
-    size: big_0
+    size: big,
+    space: true
   },
   {
     value: "ctrl",
@@ -231,7 +234,7 @@ export const data = [
   },
   {
     value: "alt",
-    size: small_1
+    size: smallA
   },
   {
     value: "",
@@ -239,7 +242,7 @@ export const data = [
   },
   {
     value: "alt",
-    size: small_1
+    size: smallA
   },
   {
     value: "fn",
