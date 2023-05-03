@@ -31,6 +31,7 @@
 
 .key__container {
   text-align: center;
+  padding-top: 20px;
 }
 
 .key {
@@ -49,7 +50,12 @@
   align-items: center;
   justify-content: center;
   vertical-align: top;
+  &:hover {
+    background-color: green;
+    color: rgb(255, 0, 128);
+  }
 }
 .active {
     background-color: darkmagenta;
+    color: gold;
   }
