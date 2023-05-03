@@ -34,6 +34,7 @@ const lineBreak = () => {
 lineBreak();
 
 const buttons = document.querySelectorAll(".key");
+
 placeKeyboard.addEventListener("click", (event) => {
   // Отлавливаем элемент в родители на который мы нажали
   let activeKey = event.target.closest(".key");
@@ -46,9 +47,67 @@ placeKeyboard.addEventListener("click", (event) => {
     }
     // Добавляем тому на который нажали
     activeKey.classList.add("active");
-    console.log(activeKey);
+    let attribyteActiveKey = activeKey.getAttribute("code");
+    // console.log(mainTextArea.value);
+
+    // addsymbolToText();
+    // console.log(contentArea.innerHTML = 'Привет');
+    // contentArea = mainTextArea.value += attribyteActiveKey;
+    let attribyteActiveKeyValue = activeKey.getAttribute("value");
+    contentArea = mainTextArea.value += attribyteActiveKeyValue;
   }
 });
+
+const mainTextArea = document.querySelector(".text_input_field");
+let contentArea = mainTextArea.value;
+const addsymbolToText = (codeKey) => {
+  mainTextArea.addEventListener("input", () => {
+    contentArea = mainTextArea.value;
+    let lastsymbol = contentArea[contentArea.length - 1];
+    let lastsymbolCAPS = lastsymbol.toUpperCase()
+    console.log(lastsymbol.toUpperCase());
+    // console.log(codeKey);
+    //dkdkkd(lastsymbol);
+    
+    function findletterINKEY() {
+      //console.log(codeKey);
+      //console.log(lastsymbol);
+      let keyScreenActive = document.querySelector(
+        `.key[value=${lastsymbolCAPS}]`
+      );
+      //console.log(keyScreenActive);
+      for (let i = 0; i < buttons.length; i++) {
+        // Убираем у других
+        buttons[i].classList.remove("active");
+      }
+      
+      keyScreenActive.classList.add("active");
+      
+      /*
+      buttons.forEach(button => {
+        button.hasAttribute([value === lastsymbol])
+      })
+      console.log(buttons.value);
+      */
+    }
+    findletterINKEY();
+  });
+};
+
+mainTextArea.addEventListener("keydown", (event) => {
+  
+  // console.log(`event.key ${event.key} event.code ${event.code}`);
+  let codeKey = `${event.code}`;
+  // console.log(buttons);
+  let ffhfh = buttons[`code:${codeKey}`];
+  addsymbolToText(codeKey);
+  
+
+  // console.log(ffhfh)
+  // let addletter = mainTextArea.push(ffhfh);
+  // console.log(addletter);
+});
+
 /*
 placeKeyboard.addEventListener("click", (event) => {
   console.log(event.target);
@@ -105,16 +164,6 @@ for (let i = 0; i < buttons.length; i++) {
 }
 */
 
-const mainTextArea = document.querySelector(".text_input_field");
-mainTextArea.addEventListener("input", () => {
-  let contentArea = mainTextArea.value;
-  let lastsymbol = contentArea[contentArea.length - 1];
-  console.log(lastsymbol);
-});
-
-mainTextArea.addEventListener("keydown", (event) => {
-  console.log(`event.key ${event.key} event.code ${event.code}`);
-});
 /*
 const searchKey = () => {
 
