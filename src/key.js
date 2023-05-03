@@ -140,11 +140,13 @@ export const data = [
   },
   {
     value: "G",
-    size: small
+    size: small,
+    code: "KeyG"
   },
   {
     value: "H",
-    size: small
+    size: small,
+    code: "KeyH"
   },
   {
     value: "J",

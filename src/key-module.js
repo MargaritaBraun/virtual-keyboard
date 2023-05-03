@@ -1,8 +1,11 @@
 export class KeyButton {
-  constructor({ value, size, space }) {
+  constructor({
+    value, size, space, code
+  }) {
     this.value = value;
     this.size = size;
     this.space = space;
+    this.code = code;
   }
 
   generateKey() {
@@ -19,6 +22,7 @@ export class KeyButton {
       template += "</span>";
     }
     if (this.space) keyboard.setAttribute("space", this.space);
+    if (this.code) keyboard.setAttribute("code", this.code);
     keyboard.innerHTML = template;
     return keyboard;
   }
