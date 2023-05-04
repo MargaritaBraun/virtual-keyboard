@@ -5,6 +5,8 @@ import { KeyButton } from "./key-module";
 import { data } from "./key";
 
 let placeKeyboard = document.querySelector(".key__container");
+const mainTextArea = document.querySelector(".text_input_field");
+let contentArea = mainTextArea.value;
 
 // eslint-disable-next-line no-shadow
 const renderKeyboardToDom = () => {
@@ -47,65 +49,46 @@ placeKeyboard.addEventListener("click", (event) => {
     }
     // Добавляем тому на который нажали
     activeKey.classList.add("active");
-    let attribyteActiveKey = activeKey.getAttribute("code");
-    // console.log(mainTextArea.value);
-
-    // addsymbolToText();
-    // console.log(contentArea.innerHTML = 'Привет');
-    // contentArea = mainTextArea.value += attribyteActiveKey;
     let attribyteActiveKeyValue = activeKey.getAttribute("value");
-    contentArea = mainTextArea.value += attribyteActiveKeyValue;
+
+    const backspace = document.querySelector("[value = 'backspace']");
+    const enter = document.querySelector("[value = 'enter']");
+    // contentArea = mainTextArea.value += attribyteActiveKeyValue;
+    if (activeKey === backspace) {
+      contentArea = mainTextArea.value.slice(0, contentArea.length - 1);
+      mainTextArea.value = contentArea;
+    } else if (activeKey) {
+      contentArea = mainTextArea.value += attribyteActiveKeyValue;
+    }
   }
 });
 
-const mainTextArea = document.querySelector(".text_input_field");
-let contentArea = mainTextArea.value;
-const addsymbolToText = (codeKey) => {
+const addsymbolToText = () => {
   mainTextArea.addEventListener("input", () => {
     contentArea = mainTextArea.value;
     let lastsymbol = contentArea[contentArea.length - 1];
-    let lastsymbolCAPS = lastsymbol.toUpperCase()
+    let lastsymbolCAPS = lastsymbol.toUpperCase();
     console.log(lastsymbol.toUpperCase());
-    // console.log(codeKey);
-    //dkdkkd(lastsymbol);
-    
+
     function findletterINKEY() {
-      //console.log(codeKey);
-      //console.log(lastsymbol);
       let keyScreenActive = document.querySelector(
         `.key[value=${lastsymbolCAPS}]`
       );
-      //console.log(keyScreenActive);
       for (let i = 0; i < buttons.length; i++) {
-        // Убираем у других
         buttons[i].classList.remove("active");
       }
-      
+
       keyScreenActive.classList.add("active");
-      
-      /*
-      buttons.forEach(button => {
-        button.hasAttribute([value === lastsymbol])
-      })
-      console.log(buttons.value);
-      */
     }
     findletterINKEY();
   });
 };
 
 mainTextArea.addEventListener("keydown", (event) => {
-  
   // console.log(`event.key ${event.key} event.code ${event.code}`);
   let codeKey = `${event.code}`;
   // console.log(buttons);
-  let ffhfh = buttons[`code:${codeKey}`];
   addsymbolToText(codeKey);
-  
-
-  // console.log(ffhfh)
-  // let addletter = mainTextArea.push(ffhfh);
-  // console.log(addletter);
 });
 
 /*
@@ -135,39 +118,3 @@ placeKeyboard.addEventListener("keyup", function (index) {
   }
 });
 */
-/*
-const fff = () => {
-buttons.forEach((button) => {
-  button.classList.remove("active");
-});
-}
-
-placeKeyboard.addEventListener("click", (event) => {
-  console.log(event.target);
-  buttons.forEach((button) => {
-    if (event.target.closest(".key")) {
-      button.classList.add("active");
-      buttons.classList.remove("active");
-    }
-  });
-});
-*/
-
-/*
-let lastClicked = buttons[0];
-for (let i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener("click", () => {
-    lastClicked.classList.remove("active");
-    this.classList.add("active");
-    lastClicked = this;
-  });
-}
-*/
-
-/*
-const searchKey = () => {
-
-};
-searchKey();
-*/
-// console.log(buttons);
